@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+  <title>Книги</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css.css">
+</head>
+
+<body>
+  <% include blocks/header.ejs %>
+	<div class="block">
+
+
+  <h1> Книги</h1>
+	<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Author</th>
+      <th scope="col">Genre</th>
+    </tr>
+  </thead>
+  <tbody >
+<% for (var i=0; i< rows.length ; i++) {%>
+    <tr >
+      <th scope="row"><%= rows[i].ID %></th>
+      <td><%= rows[i].Name %></td>
+      <td><%= rows[i].Author %></td>
+      <td><%= rows[i].Genre %></td>
+    </tr>
+<% } %>
+  </tbody>
+</table>
+<form method="post" action="/about"  >
+  <div class="form-group"   >
+    <label for="exampleInputEmail1">Enter ID</label>
+    <input  type="number" name="ID" class="form-control" id="ID"  placeholder="Enter ID">
+  </div>
+	<div class="form-group"   >
+		<label for="exampleInputEmail1">Enter Name</label>
+		<input type="text" name="Name" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter Name">
+	</div>
+	<div class="form-group"   >
+		<label for="exampleInputEmail1">Enter Author</label>
+		<input type="text" name="Author" class="form-control" id="Author" aria-describedby="emailHelp" placeholder="Enter Author">
+	</div>
+	<div class="form-group"   >
+		<label for="exampleInputEmail1">Enter Genre</label>
+		<input type="text" name="Genre" class="form-control" id="Genre1" aria-describedby="emailHelp" placeholder="Entre Genre">
+	</div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+						</div>
+</body>
+
+</html>
